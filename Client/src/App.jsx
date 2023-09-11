@@ -20,18 +20,31 @@ function App() {
    //!ARCHIVO QUE IMPORTA Y EXPORTA LOS COMPONENTES PARA LUEGO IMPORTAR TODO DEL MISMO LUGAR. INDEX.JS EN CARPETA COMPONENTS SOLO
    const location = useLocation();
    const [access,setAccess] = useState(false);
-
-   const EMAIL = 'facurimini@gmail.com';
-   const PASSWORD = 'talleres1';
    const navigate = useNavigate()
+   
+   
+      function loginHandler(userData) {
+         const { email, password } = userData;
+         const URL = 'http://localhost:3001/rickandmorty/login/';
+         axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+            const { access } = data;
+            setAccess(data);
+            access && navigate('/home');
+         });
+      }
 
-   const login = (userData) =>{ /*Si el mail y contraseña son correctos, me ingresa a la página mediante navigate. Llamo a la funcion y le paso el lugar
-   a donde quiero que me direccione. */
-   if(userData.email === EMAIL && userData.password === PASSWORD){
-   setAccess(true);
-   navigate('/home'); 
-   }
-   }
+   // const EMAIL = 'facurimini@gmail.com';
+   // const PASSWORD = 'talleres1';
+
+   // const login = (userData) =>{ /*Si el mail y contraseña son correctos, me ingresa a la página mediante navigate. Llamo a la funcion y le paso el lugar
+   // a donde quiero que me direccione. */
+   // if(userData.email === EMAIL && userData.password === PASSWORD){
+   // setAccess(true);
+   // navigate('/home'); 
+   // }
+   // }
+
+
    useEffect(() => {
       !access && navigate('/');
    // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -90,7 +103,7 @@ function App() {
          <Route path='/about' element={<About/>}/>
          <Route path='/detail/:id' element={<Detail/>}/> {/*Ruta Dinamica*/}
          <Route path='*' element={<ErrorPage/>}/>
-         <Route path='/' element={<Form login= {login}/>}/>
+         <Route path='/' element={<Form login= {loginHandler}/>}/>
          <Route path='/favorites' element={<Favorites/>}/>
 
          </Routes>

@@ -9,3 +9,4 @@ const store = createStore(
     composeEnhancer(applyMiddleware(thunkMiddleware))
 )
 export default store;
+//!Por las dudas fijarse el import de thunk.
