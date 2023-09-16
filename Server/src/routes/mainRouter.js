@@ -5,12 +5,10 @@ const {postFav,deleteFav} = require("../controllers/handleFavorites");
 
 const mainRouter = Router();
 
-mainRouter.get("/character/:id", getCharById);
+mainRouter.get("/character/:id",getCharById);
 mainRouter.get("/login",login);
 mainRouter.get("/fav",postFav);
 mainRouter.delete("/fav/:id",deleteFav)
 
 
-module.exports = {
-    mainRouter
-};
+module.exports = mainRouter;

@@ -1,3 +1,4 @@
+import style from "./card.module.css"
 import {Link, useNavigate} from 'react-router-dom';
 import { addFav, removeFav } from '../../redux/action';
 import { connect } from 'react-redux';
@@ -31,7 +32,7 @@ useEffect(() => {
 }, [myFavorites]);
 
    return (
-      <div>
+      <div className={style.card}>
          {isFav ? (<button onClick={handleFavorite}>❤️</button>) :
          (<button onClick={handleFavorite}>🤍</button>)}
    

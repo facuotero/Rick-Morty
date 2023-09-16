@@ -78,7 +78,7 @@ function App() {
    }
    
    const randomHandler = () => {
-      let randomId = (Math.random() * 5).toFixed();
+      let randomId = (Math.random() * 826).toFixed();
 
       randomId = parseInt(randomId);
       if(!characters.includes(randomId)){
