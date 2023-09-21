@@ -20,7 +20,7 @@ const handleFilter = (event) => {
 
 
 return (
-    <div className="Favorites">
+    <div>
     <select onChange={handleOrder}>
         <option value="A">A</option>
         <option value="D">D</option>
