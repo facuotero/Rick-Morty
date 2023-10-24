@@ -15,7 +15,7 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const [characters, setCharacters] = useState([]);
-  const [access, setAccess] = useState(false);
+  const [access, setAccess] = useState(true);
 
   const URL = "http://localhost:3001/rickandmorty/login/";
   const loginHandler = async (userData) => {

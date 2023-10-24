@@ -24,12 +24,6 @@ export const addFav = (character) => {
   };
 };
  
-// export const removeFav = (id) => {
-//     return {
-//         type: "REMOVE_FAV",
-//         payload: id
-//     }
-// }
 export const removeFav = (id) => {
    const endpoint = `http://localhost:3001/rickandmorty/fav/${id}`;
    
@@ -48,7 +42,6 @@ export const removeFav = (id) => {
   };
 };
 
-
 export const filterCards = (gender) => {
     return {
         type: FILTER,
@@ -61,9 +54,3 @@ export const orderCards = (orden) => {
         payload: orden
     }
 }
-// export const addFav = (favorite) => {
-//     return {
-//         type: "ADD_FAV",
-//         payload: favorite
-//     }
-// }

@@ -10,7 +10,7 @@ module.exports = (database) => {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      isEmail:true,
+      isEmail: true,
     },
     password: {
       type: DataTypes.STRING,
